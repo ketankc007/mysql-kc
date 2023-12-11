@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql-deployment
+  name: mysql
 spec:
   replicas: 1
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: mysql:latest
+          image: 057494829841.dkr.ecr.eu-west-3.amazonaws.com/mysql:latest
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: 12345678
@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-service
+  name: mysql
 spec:
   selector:
     app: mysql
